@@ -1,3 +1,5 @@
+import { JournaEntries } from "./JournaEntries"
+
 export const Sidebar = () => {
   return (
     <aside className="journal__sidebar">
@@ -17,7 +19,8 @@ export const Sidebar = () => {
             <p className="mt-5">New entry</p>
         </div>
 
-        
+        <JournaEntries />
+
     </aside>
   )
 }
