@@ -4,6 +4,7 @@ export const JournalScreen = () => {
           <h1>
               JournalScreen
           </h1>
+          
       </div>
   );
   }
