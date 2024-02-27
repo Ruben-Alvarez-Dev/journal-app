@@ -1,12 +1,42 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useForm } from "../../hooks/useForm";
 
 export const LoginScreen = () => {
-  return (
+  
+  const [ formValues, handleInputChanges ] = useForm({
+    email: "ruben@gmail.com",
+    password: "123456"
+  })
+  const { email, password} = formValues;
+  
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(email, password);
+  }
+
+
+    return (
     <div>
         <h3 className="auth__title">Login</h3>
-        <form>
-            <input className="auth__input" type="text" placeholder="Email" name="email" autoComplete="off"/>
-            <input className="auth__input" type="password" placeholder="Password" name="password" />
+        <form onSubmit={handleLogin}>
+            <input 
+                className="auth__input" 
+                type="text" 
+                placeholder="Email" 
+                name="email" 
+                autoComplete="off"
+                value={ email }
+                onChange={ handleInputChanges }
+                />
+
+            <input 
+                className="auth__input" 
+                type="password" 
+                placeholder="Password" 
+                name="password" 
+                value={ password }
+                onChange={ handleInputChanges }
+                />
             
             <button className="btn btn-primary btn-block"  disabled={ false } type="submit">Login</button>
             
