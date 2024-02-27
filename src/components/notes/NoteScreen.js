@@ -6,7 +6,7 @@ export const NoteScreen = () => {
         
         <NotesAppBar />
   
-        <div classaName="notes__content">
+        <div className="notes__content">
           <input
               type="text"
               placeholder="Some awesome title"
@@ -19,7 +19,7 @@ export const NoteScreen = () => {
           ></textarea>
           <div className="notes__image">
             <img
-              src="https://cdn.pixabay.com/photo/2023/11/14/11/07/sparrow-8387465_1280.jpg"ç
+              src="https://cdn.pixabay.com/photo/2023/11/14/11/07/sparrow-8387465_1280.jpg"
               alt="imagen"
             ></img>
           </div>    

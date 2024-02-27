@@ -1,6 +1,6 @@
 /* import { NothingSelected } from "./NothingSelected"; */
 
-import { NotesAppBar } from "../notes/NotesAppBar";
+/* import { NotesAppBar } from "../notes/NotesAppBar"; */
 import { NoteScreen } from "../notes/NoteScreen";
 import { Sidebar } from "./Sidebar";
 export const JournalScreen = () => {
