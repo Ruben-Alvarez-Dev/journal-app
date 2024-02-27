@@ -1,6 +1,7 @@
 /* import { NothingSelected } from "./NothingSelected"; */
 
 import { NotesAppBar } from "../notes/NotesAppBar";
+import { NoteScreen } from "../notes/NoteScreen";
 import { Sidebar } from "./Sidebar";
 export const JournalScreen = () => {
     return (
@@ -9,8 +10,7 @@ export const JournalScreen = () => {
           <Sidebar />
           <main>
                 {/* <NothingSelected /> */}
-                <NotesAppBar />
-                {/* <NoteScreen /> */}
+                <NoteScreen />
           </main>
           
       </div>

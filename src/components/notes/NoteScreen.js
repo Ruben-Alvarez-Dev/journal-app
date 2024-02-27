@@ -1,9 +1,29 @@
+import { NotesAppBar } from "./NotesAppBar"
+
 export const NoteScreen = () => {
   return (
     <div className="notes__main-content">
-        <h3>
-            Note Screen
-        </h3>
+        
+        <NotesAppBar />
+  
+        <div classaName="notes__content">
+          <input
+              type="text"
+              placeholder="Some awesome title"
+              className="notes__title-input"
+              autoComplete="off"
+          />
+          <textarea
+              placeholder="What happened today"
+              className="notes__textarea"
+          ></textarea>
+          <div className="notes__image">
+            <img
+              src="https://cdn.pixabay.com/photo/2023/11/14/11/07/sparrow-8387465_1280.jpg"ç
+              alt="imagen"
+            ></img>
+          </div>    
+        </div>
     </div>
   )
 }
