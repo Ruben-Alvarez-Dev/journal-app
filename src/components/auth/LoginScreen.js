@@ -1,17 +1,22 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useForm } from "../../hooks/useForm";
+import { login } from "../../actions/auth";
 
 export const LoginScreen = () => {
+  
+  const dispatch = useDispatch();
   
   const [ formValues, handleInputChanges ] = useForm({
     email: "ruben@gmail.com",
     password: "123456"
   })
-  const { email, password} = formValues;
+  
+  const { email, password } = formValues;
   
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    dispatch(login(5555, 'Dispatched'))
   }
 
 
