@@ -1,24 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import { AuthRouter } from './AuthRouter';
 import { JournalScreen } from '../components/journal/JournalScreen';
-/* import firebase from 'firebase'; // Import the 'firebase' package */
 import { firebase } from "../firebase/firebase-config"
-import { useDispatch } from 'react-redux'; // Import the 'useDispatch' hook from the Redux store
-import { login } from '../actions/auth'; // Import the 'login' action from the Redux store
+import { useDispatch } from 'react-redux';
+import { login } from '../actions/auth';
 
 export const AppRouter = () => {
     
-    const dispatch = useDispatch(); // Initialize the 'dispatch' function
+    const dispatch = useDispatch();
+    
+    const [checking, setChecking] = useState(true);
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+
     useEffect(() => {
         firebase.auth().onAuthStateChanged((user) => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName));
+                setIsLoggedIn(true);
+            } else {
+                setIsLoggedIn(false);
             }
+            setChecking(false);
+            
         });
-    }, []); // Add the missing closing parenthesis for the 'useEffect' hook
+    }, [dispatch, setChecking, setIsLoggedIn]);
 
+    if (checking) {
+        return (
+            <>
+                <h1>Espere...</h1>
+                <h2>Verificando...</h2>
+                <hr />
+            </>
+        )
+    } 
+    
     return (
         <Router>
             <div>
