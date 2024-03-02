@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Redirect
-  } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 
@@ -15,6 +11,8 @@ import { JournalScreen } from '../components/journal/JournalScreen';
 import { login } from '../actions/auth';
 import { PublicRoute } from './PublicRoute';
 import { startLoadingNotes } from '../actions/notes';
+
+
 
 export const AppRouter = () => {
 
