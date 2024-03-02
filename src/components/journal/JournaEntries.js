@@ -4,7 +4,7 @@ import { JournalEntry } from './JournalEntry';
 export const JournaEntries = () => {
   
     const { notes } = useSelector( state => state.notes );
-    console.log(notes);
+    
 
 
     return (
