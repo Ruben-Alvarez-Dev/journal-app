@@ -9,6 +9,5 @@ export const store = configureStore({
         auth: authReducer,
         ui: uiReducer,
         notes: notesReducer,
-        
     },
 });
