@@ -1,21 +1,27 @@
-export const JournalEntry = () => {
-  return (
+export const JournalEntry = ({ id, date, title, body, url }) => {
+  
+    console.log(id, date, title, body, url);
+
+    return (
     <div className="journal__entry pointer">
         
-        <div 
+        {
+            url &&
+            <div 
             className="journal__entry-picture"
             style={{
                 backgroundSize: 'cover',
-                backgroundImage: 'url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg)'
+                backgroundImage: `url(${ url })`
             }}
-        ></div>
+            ></div>
+        }
 
         <div className="journal__entry-body">
             <p className="journal__entry-title">
-            Hola
+            { title }
             </p>
             <p className="journal__entry-content">
-            Loerem ipsum dolor sit amet
+            { body }
             </p>
         </div>
 
