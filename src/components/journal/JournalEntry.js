@@ -1,6 +1,9 @@
+import moment from "moment";
+
 export const JournalEntry = ({ id, date, title, body, url }) => {
   
-    console.log(id, date, title, body, url);
+    const noteDate = moment(date);
+    console.log(noteDate);
 
     return (
     <div className="journal__entry pointer">
@@ -26,8 +29,8 @@ export const JournalEntry = ({ id, date, title, body, url }) => {
         </div>
 
         <div className="journal__entry-date-box">
-            <span>Monday</span>
-            <h4>28</h4>
+            <span>{ noteDate.format('dddd')}</span>
+            <h4>{ noteDate.format('Do') }</h4>
         </div>
         
 
